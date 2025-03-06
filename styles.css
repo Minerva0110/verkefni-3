@@ -1,0 +1,333 @@
+:root {
+  --font-base-size: 16px;
+  --font-base-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --max-inline-size: 50rem;
+  --spacing: 1.2rem;
+
+  --color-correct: #8dcf8f;
+  --color-incorrect: #ff8e8e;
+  --background-color: #B3E5FC;
+  --primary-color: #666; 
+  --button-hover: #999;
+  --text-color: #333;
+  --heading-font-weight: 600;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: var(--font-base-family);
+  font-size: var(--font-base-size);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--spacing);
+}
+
+#quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: var(--max-inline-size);
+  width: 100%;
+}
+
+
+/* Navigation */
+#quiz-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+#quiz-nav button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#quiz-nav button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Main Quiz Container */
+#quiz-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Quiz Title */
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: var(--heading-font-weight);
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Small screens (phones) */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 5px; 
+}
+
+#toggle-register {
+  background-color: #666;
+  color: white; 
+}
+
+#toggle-register:hover {
+  background-color: #555; 
+}
+
+#toggle-login {
+  background-color: #666;
+  color: white; 
+}
+
+#toggle-login:hover {
+  background-color: #555;
+}
+
+#logout-button {
+  background-color: #666;
+  color: white;
+}
+
+#logout-button:hover {
+  background-color: #555; 
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: var(--heading-font-weight);
+}
+
+#site-footer {
+  width: 100%; 
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #B3E5FC;
+  color: #000;
+  font-size: 14px;
+  border-top: 2px solid #B3E5FC;
+}
+
+
+.watermark { 
+  font-size: 14px;
+  font-weight: bold; 
+  opacity: 0.8;
+}
+
+
+.answer-label {
+  font-weight: bold; 
+  font-size: 16px; 
+  color: #333;
+  display: block; 
+  padding: 8px;
+  border-radius: 5px; 
+  cursor: pointer;
+}
+
+/* Answer Section */
+.question {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.question h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Answer Options */
+.question__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: var(--spacing);
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.question__form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.question__form input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  cursor: pointer;
+}
+
+/* Correct & Incorrect Answer Feedback */
+.answer--correct {
+  background-color: var(--color-correct);
+  border: 2px solid green;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.answer--incorrect {
+  background-color: var(--color-incorrect);
+  border: 2px solid red;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+#answers-label {
+  font-size: 1.25rem;
+  font-weight: 600; 
+  color: #333;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+#add-question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#add-question-form input {
+  width: 100%;
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#add-question-form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+#add-question-form button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Submit Button */
+.question__form button {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1rem;
+}
+
+.question__form button:hover {
+  background-color: var(--button-hover); 
+}
+
+.delete-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.delete-button:hover {
+  background-color: #c0392b;
+}
+
+/* Quiz Completion Message */
+.quiz-completed {
+  font-size: 1.5rem;
+  font-weight: var(--heading-font-weight);
+  color: var(--primary-color);
+  margin-top: 2rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #quiz-container {
+    padding: 1rem;
+  }
+  .question__form label {
+    font-size: 0.9rem;
+  }
+  .question__form button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}

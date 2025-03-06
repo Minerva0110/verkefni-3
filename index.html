@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="is">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vefforritunarprófið</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <h1>Velkomin í Vefforritunarprófið! 🌐</h1>
+
+
+  <form id="register-form" style="display: none;">
+      <h2>Nýskráning</h2>
+      <input type="text" id="new-username" placeholder="Nýtt notandanafn" required>
+      <input type="password" id="new-password" placeholder="Nýtt lykilorð" required>
+      <button type="submit">Búa til aðgang</button>
+      <p id="register-message"></p>
+      <button type="button" id="toggle-login">Áttu nú þegar aðgang? Skrá inn</button>
+  </form>
+
+  <form id="login-form">
+      <h2>Innskráning</h2>
+      <input type="text" id="username" placeholder="Notandanafn" required>
+      <input type="password" id="password" placeholder="Lykilorð" required>
+      <button type="submit">Skrá inn</button>
+      <p id="login-message"></p>
+      <button type="button" id="toggle-register">Stofna aðgang hér</button>
+  </form>
+
+
+  <div id="quiz-wrapper" style="display: none;">
+      <nav id="quiz-nav"></nav>
+      <div id="quiz-container"></div>
+      <button id="logout-button" style="display: none;">Útskrá</button>
+  </div>
+
+  <footer id="site-footer">
+    <p>Allur réttur áskilinn &copy; 2025 | <span class="watermark">vefforritun 2</span></p>
+  </footer>
+
+  <script src="/scripts/main.js"></script>
+  <script src="/scripts/auth.js"></script>
+  
+</body>
+</html>
+

@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "scripts": {
+  "start": "node --loader ts-node/esm src/index.ts",
+  "watch": "tsc --watch & npm start"
+},
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "@prisma/client": "^6.4.1",
+    "bcrypt": "^5.1.0",
+    "hono": "^4.7.4",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "prisma": "^6.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.2.2"
+  }
+}
