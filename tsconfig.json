@@ -12,5 +12,7 @@
     "esModuleInterop": true,
 
   },
-  "include": ["src"]
+  "include": ["src",
+   "tests/**/*.ts"
+]
 }
